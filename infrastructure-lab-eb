@@ -1,1 +1,30 @@
+# Home Lab — Infrastructure Virtualisée
 
+## 📌 Objectif
+Mettre en place une infrastructure réseau complète en environnement virtualisé 
+pour expérimenter les services d'entreprise (AD, DNS, DHCP, pare-feu, supervision).
+
+## ️ Architecture
+
+| Machine | OS | Rôle | IP |
+|---------|-----|------|-----|
+| Access Point | 172.16.0.42 |
+|Firewall EdgeRouter-Lite-3-Port 3.0.1 | 192.168.1.222 -> 172.16.255.254 |
+| PVE01 |  Proxmox VE 9.2.10 | Virtualisation | 172.16.222.46
+| PVE02 |  Proxmox VE 9.2.10 | Virtualisation | 172.16.222.47
+| NAS01 |  DSM 7.3.2-86009 Update 4 | Stockage | 172.16.9.8
+
+##  Prérequis
+- Proxmox VE 9.2.10
+- 16 Go RAM minimum = Cluster PVE01 + PVE02
+- Tailscale (accès distant sécurisé)
+
+## Installation
+1. Installer Proxmox VE
+2. Mettre en place les diférents services
+3. Installation de nouveaux services pour apprendre
+
+##  Sécurité
+- Accès admin via Tailscale uniquement
+- Désactivation du compte root
+- Chiffrement du mot de passe 
